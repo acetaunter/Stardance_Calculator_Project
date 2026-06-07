@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -31,7 +32,7 @@ public class Main extends Application{
 
         Button one = new Button("1");
         one.setLayoutX(x_pos +10);
-        one.setLayoutY(y_pos +75);
+        one.setLayoutY(y_pos +100);
         root.getChildren().add(one);
         one.setOnAction(e->{
             User_equation.appendText("1");
@@ -40,7 +41,7 @@ public class Main extends Application{
 
         Button two = new Button("2");
         two.setLayoutX(x_pos +30);
-        two.setLayoutY(y_pos +75);
+        two.setLayoutY(y_pos +100);
         root.getChildren().add(two);
         two.setOnAction(e->{
             User_equation.appendText("2");
@@ -50,7 +51,7 @@ public class Main extends Application{
 
         Button three = new Button("3");
         three.setLayoutX(x_pos +50);
-        three.setLayoutY(y_pos +75);
+        three.setLayoutY(y_pos +100);
        root.getChildren().add(three);
         three.setOnAction(e->{
             User_equation.appendText("3");
@@ -59,7 +60,7 @@ public class Main extends Application{
 
         Button four = new Button("4");
         four.setLayoutX(x_pos+10);
-        four.setLayoutY(y_pos +50);
+        four.setLayoutY(y_pos +75);
         root.getChildren().add(four);
         four.setOnAction(e->{
             User_equation.appendText("4");
@@ -69,7 +70,7 @@ public class Main extends Application{
 
         Button five = new Button("5");
         five.setLayoutX(x_pos +30);
-        five.setLayoutY(y_pos +50);
+        five.setLayoutY(y_pos +75);
         root.getChildren().add(five);
         five.setOnAction(e->{
             User_equation.appendText("5");
@@ -79,7 +80,7 @@ public class Main extends Application{
 
         Button six = new Button("6");
         six.setLayoutX(x_pos +50);
-        six.setLayoutY(y_pos +50);
+        six.setLayoutY(y_pos +75);
         root.getChildren().add(six);
         six.setOnAction(e->{
             User_equation.appendText("6");
@@ -88,7 +89,7 @@ public class Main extends Application{
 
         Button seven = new Button("7");
         seven.setLayoutX(x_pos +10);
-        seven.setLayoutY(y_pos +25);
+        seven.setLayoutY(y_pos +50);
         root.getChildren().add(seven);
         seven.setOnAction(e->{
             User_equation.appendText("7");
@@ -97,7 +98,7 @@ public class Main extends Application{
 
         Button eight = new Button("8");
         eight.setLayoutX(x_pos +30);
-        eight.setLayoutY(y_pos +25);
+        eight.setLayoutY(y_pos +50);
         root.getChildren().add(eight);
         eight.setOnAction(e->{
             User_equation.appendText("8");
@@ -106,7 +107,7 @@ public class Main extends Application{
 
         Button nine = new Button("9");
         nine.setLayoutX(x_pos +50);
-        nine.setLayoutY(y_pos +25);
+        nine.setLayoutY(y_pos +50);
         root.getChildren().add(nine);
         nine.setOnAction(e->{
             User_equation.appendText("9");
@@ -115,7 +116,7 @@ public class Main extends Application{
 
         Button zero = new Button("0");
         zero.setLayoutX(x_pos +10);
-        zero.setLayoutY(y_pos +100);
+        zero.setLayoutY(y_pos +125);
         root.getChildren().add(zero);
         zero.setOnAction(e->{
             User_equation.appendText("0");
@@ -126,7 +127,7 @@ public class Main extends Application{
         Button plus = new Button("+");
         root.getChildren().add(plus);
         plus.setLayoutX(x_pos +70);
-        plus.setLayoutY(y_pos +100);
+        plus.setLayoutY(y_pos +125);
         plus.setOnAction(e->{
             User_equation.appendText("+");
             counter++;
@@ -136,7 +137,7 @@ public class Main extends Application{
         Button minus = new Button("-");
         root.getChildren().add(minus);
         minus.setLayoutX(x_pos +70);
-        minus.setLayoutY(y_pos +75);
+        minus.setLayoutY(y_pos +100);
         minus.setOnAction(e->{
             User_equation.appendText("-");
             counter++;
@@ -145,7 +146,7 @@ public class Main extends Application{
         Button multi = new Button("*");
         root.getChildren().add(multi);
         multi.setLayoutX(x_pos +70);
-        multi.setLayoutY(y_pos +50);
+        multi.setLayoutY(y_pos +75);
         multi.setOnAction(e->{
             User_equation.appendText("*");
             counter++;
@@ -154,7 +155,7 @@ public class Main extends Application{
         Button divide = new Button("/");
         root.getChildren().add(divide);
         divide.setLayoutX(x_pos +70);
-        divide.setLayoutY(y_pos +25);
+        divide.setLayoutY(y_pos +50);
         divide.setOnAction(e->{
             User_equation.appendText("/");
             counter++;
@@ -163,19 +164,59 @@ public class Main extends Application{
         //
         Button decimal = new Button(".");
         root.getChildren().add(decimal);
-        decimal.setLayoutX(30);
-        decimal.setLayoutY(30);
+        decimal.setLayoutX(x_pos +30);
+        decimal.setLayoutY(y_pos +125);
+        decimal.setOnAction(e->{
+            User_equation.appendText(".");
+            counter++;
+        });
 
+
+        Button L_Parenthese = new Button("(");
+        root.getChildren().add(L_Parenthese);
+        L_Parenthese.setLayoutX(x_pos +10);
+        L_Parenthese.setLayoutY(y_pos +25);
+        L_Parenthese.setOnAction(e->{
+            User_equation.appendText("(");
+            counter++;
+        });
+
+        Button R_Parenthese = new Button(")");
+        root.getChildren().add(R_Parenthese);
+        R_Parenthese.setLayoutX(x_pos +30);
+        R_Parenthese.setLayoutY(y_pos +25);
+        R_Parenthese.setOnAction(e->{
+            User_equation.appendText(")");
+            counter++;
+        });
+
+        Button Percent = new Button("%");
+        root.getChildren().add(Percent);
+        Percent.setLayoutX(x_pos +50);
+        Percent.setLayoutY(y_pos +25);
+        Percent.setOnAction(e->{
+            User_equation.appendText("%");
+
+        });
+
+        Button AC = new Button("AC");
+        root.getChildren().add(AC);
+        AC.setLayoutX(x_pos +70);
+        AC.setLayoutY(y_pos +25);
+        AC.setOnAction(e->{
+            User_equation.clear();
+        });
+        Scene scene = new Scene(root,400,400);
 
         Button equals = new Button("=");
         root.getChildren().add(equals);
-
+        equals.setLayoutX(x_pos +50);
+        equals.setLayoutY(y_pos +125);
         equals.setOnAction(e->{
-            ArrayList<String> equation = new ArrayList<>(Collections.singleton(User_equation.getText()));
-            System.out.print(equation);
-        });
 
-        Scene scene = new Scene(root,400,400);
+           String in_equation = String.valueOf(User_equation);
+                String result = Eval_Math.Equation(in_equation);
+        });
 
         stage.setScene(scene);
         stage.show();
