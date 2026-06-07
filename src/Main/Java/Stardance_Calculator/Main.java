@@ -1,11 +1,11 @@
 package Stardance_Calculator;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
+
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -123,11 +123,55 @@ public class Main extends Application{
         });
 
         //operations code
+        Button plus = new Button("+");
+        root.getChildren().add(plus);
+        plus.setLayoutX(x_pos +70);
+        plus.setLayoutY(y_pos +100);
+        plus.setOnAction(e->{
+            User_equation.appendText("+");
+            counter++;
+        });
+
+
+        Button minus = new Button("-");
+        root.getChildren().add(minus);
+        minus.setLayoutX(x_pos +70);
+        minus.setLayoutY(y_pos +75);
+        minus.setOnAction(e->{
+            User_equation.appendText("-");
+            counter++;
+        });
+
+        Button multi = new Button("*");
+        root.getChildren().add(multi);
+        multi.setLayoutX(x_pos +70);
+        multi.setLayoutY(y_pos +50);
+        multi.setOnAction(e->{
+            User_equation.appendText("*");
+            counter++;
+        });
+
+        Button divide = new Button("/");
+        root.getChildren().add(divide);
+        divide.setLayoutX(x_pos +70);
+        divide.setLayoutY(y_pos +25);
+        divide.setOnAction(e->{
+            User_equation.appendText("/");
+            counter++;
+        });
+
+        //
+        Button decimal = new Button(".");
+        root.getChildren().add(decimal);
+        decimal.setLayoutX(30);
+        decimal.setLayoutY(30);
+
 
         Button equals = new Button("=");
         root.getChildren().add(equals);
+
         equals.setOnAction(e->{
-            ArrayList<String> equation = new ArrayList<String>(Collections.singleton(User_equation.getText()));
+            ArrayList<String> equation = new ArrayList<>(Collections.singleton(User_equation.getText()));
             System.out.print(equation);
         });
 
