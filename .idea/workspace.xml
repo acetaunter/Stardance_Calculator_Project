@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="Commit was for basic javafx setups and for a basic applications for button">
+      <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;acetaunter&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/acetaunter/Stardance_Calculator_Project.git&quot;,
+    &quot;accountId&quot;: &quot;779811f1-5cfe-4ac0-9869-10d6d14d6230&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3EoEyjRGIpKKYZdV5H483dMdu3f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Stardance_Calculator_Project [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.finalgameproject [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project" />
+      <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project\src" />
+      <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project\Main\Java" />
+      <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project\.idea" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="" />
+      <created>1780836778678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780836778678</updated>
+      <workItem from="1780836779718" duration="448000" />
+      <workItem from="1780837242166" duration="1829000" />
+      <workItem from="1780840000040" duration="1244000" />
+      <workItem from="1780841262395" duration="4009000" />
+      <workItem from="1780845306117" duration="762000" />
+      <workItem from="1780846087322" duration="7000" />
+      <workItem from="1780846101486" duration="1189000" />
+      <workItem from="1780854791901" duration="4447000" />
+    </task>
+    <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
+      <option name="closed" value="true" />
+      <created>1780840857316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780840857316</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit was for basic javafx setups and for a basic applications for button">
+      <option name="closed" value="true" />
+      <created>1780847271037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780847271037</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project" />
+    <MESSAGE value="Commit was for basic javafx setups and for a basic applications for button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit was for basic javafx setups and for a basic applications for button" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
