@@ -214,7 +214,8 @@ public class Main extends Application{
         equals.setLayoutY(y_pos +125);
         equals.setOnAction(e->{
 
-           String in_equation = String.valueOf(User_equation);
+           String in_equation = User_equation.getText();
+           System.out.println(in_equation);
                 String result = Eval_Math.Equation(in_equation);
         });
 
