@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="evaluation for the parentheses and going to do more for the rest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" afterDir="false" />
-    </list>
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="Parser logic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +93,7 @@
       <workItem from="1780854791901" duration="6907000" />
       <workItem from="1780862868941" duration="5267000" />
       <workItem from="1780933667835" duration="12172000" />
-      <workItem from="1781027413550" duration="4997000" />
+      <workItem from="1781027413550" duration="5632000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />
@@ -148,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780945843833</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Parser logic">
+      <option name="closed" value="true" />
+      <created>1781032479174</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1781032479174</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +162,8 @@
     <MESSAGE value="Commit was for basic javafx setups and for a basic applications for button" />
     <MESSAGE value="still for more button perfection" />
     <MESSAGE value="evaluation for the parentheses and going to do more for the rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="evaluation for the parentheses and going to do more for the rest" />
+    <MESSAGE value="Parser logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parser logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
