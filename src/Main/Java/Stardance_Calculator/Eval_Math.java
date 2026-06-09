@@ -13,6 +13,7 @@ public class Eval_Math {
         for(int e = 0; e < i_equation.length(); e++){
         c_equation.add(e, i_equation.charAt(e));
         }
+        //substring code for the parentheses
         while(c_equation.contains("(")){
             int begin = c_equation.lastIndexOf("(");
             int b_after = begin +1;
@@ -24,8 +25,9 @@ public class Eval_Math {
         System.out.println(c_equation);
             while(p_equation.contains('*') || p_equation.contains('/') || p_equation.contains('%')) {
                 char operator = ' ';
-                int l_number;
-                int r_number;
+                double l_number;
+                double  r_number;
+                double sum_number;
                 int operator_index = -1;
 
                 for (int g = 0; g < p_equation.size(); g++) {
@@ -38,25 +40,41 @@ public class Eval_Math {
 
                 }
 
-                l_number = Integer.valueOf(p_equation.get(operator_index-1));
+                //parser logic
                 int l_index = operator_index-1;
-
-                while((Character.isDigit(p_equation.get(l_index-1)))) {
+                StringBuilder sl_index = new StringBuilder("");
+                while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
                     l_index--;
+                    sl_index.append(p_equation.get(l_index));
                 }
+                sl_index.reverse();
+                l_number = Double.parseDouble(String.valueOf(sl_index));
 
-                r_number = Integer.valueOf(p_equation.get(operator_index +1));
+                // important note: r_index has to stop at the last number for your logic
+                int r_index = operator_index+1;
+                StringBuilder rl_index = new StringBuilder("");
+                while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
+                    r_index++;
+                    rl_index.append(p_equation.get(r_index));
+                    if(r_index +1 == p_equation.size()){
 
+                    }
+                }
+                r_number = Double.parseDouble(String.valueOf(rl_index));
+
+                for(int remove; remove<)
                 if(operator == '*'){
-                    m_number = l_number * r_number;
-                }
-                if(operator == '/'){
-                    m_number = l_number / r_number;
-                }
-                if(operator == '%'){
-                    m_number = l_number * 1/100 * r_number;
+
+                    sum_number =  r_number * l_number;
                 }
 
+                if(operator == '/'){
+                    sum_number = l_number / r_number;
+                }
+
+                if(operator == '%'){
+                    l_number = l_number /100.0;
+                }
             }
         System.out.print(c_equation);
 
