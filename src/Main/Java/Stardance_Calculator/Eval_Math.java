@@ -62,12 +62,13 @@ public class Eval_Math {
                 }
                 r_number = Double.parseDouble(String.valueOf(rl_index));
 
-                for(int remove = l_index; remove<r_index; remove++){
+                for(int remove = r_index; remove>=l_index; remove--){
                     p_equation.remove(remove);
                 }
                 if(operator == '*'){
 
                     sum_number =  r_number * l_number;
+
                 }
 
                 if(operator == '/'){
