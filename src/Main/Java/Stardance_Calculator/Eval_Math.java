@@ -18,7 +18,7 @@ public class Eval_Math {
             int begin = c_equation.lastIndexOf("(");
             int b_after = begin +1;
             ArrayList<Character> p_equation = new ArrayList<Character>();
-            while(c_equation.get(b_after) != ')'){
+            while(c_equation.get(b_after) != ')') {
                 p_equation.add(c_equation.get(b_after));
                 b_after++;
             }
@@ -27,7 +27,7 @@ public class Eval_Math {
                 char operator = ' ';
                 double l_number;
                 double  r_number;
-                double sum_number;
+                double sum_number = 0;
                 int operator_index = -1;
 
                 for (int g = 0; g < p_equation.size(); g++) {
@@ -62,27 +62,40 @@ public class Eval_Math {
                 }
                 r_number = Double.parseDouble(String.valueOf(rl_index));
 
-                for(int remove = r_index; remove>=l_index; remove--){
-                    p_equation.remove(remove);
-                }
+
                 if(operator == '*'){
-
                     sum_number =  r_number * l_number;
-
                 }
+
 
                 if(operator == '/'){
                     sum_number = l_number / r_number;
                 }
 
                 if(operator == '%'){
-                    l_number = l_number /100.0;
+                    sum_number = l_number /100.0;
                 }
-            }
+                //this must be moved
+                for(int remove = r_index; remove>=l_index; remove--){
+                    p_equation.remove(remove);
+                }
+                StringBuilder answer = new StringBuilder(String.valueOf(sum_number));
+                for(int i = 0; i < answer.length();i++){
+                    p_equation.add(l_index+i,(answer.charAt(i)));
+                }
+
+
+                for(int i = b_after; i >= begin; i--){
+                    c_equation.remove(i);
+                }
+
+
+                }
+
         System.out.print(c_equation);
 
         return i_equation;
     }
         return i_equation;
-    }}
+   }}
 
