@@ -8,16 +8,16 @@ public class Eval_Math {
 
 
     public static String Equation(String i_equation){
-        ArrayList<Character> c_equation = new ArrayList<Character>(i_equation.length());
+        ArrayList<Character> c_equation = new ArrayList<>(i_equation.length());
 
         for(int e = 0; e < i_equation.length(); e++){
         c_equation.add(e, i_equation.charAt(e));
         }
         //substring code for the parentheses
-        while(c_equation.contains("(")){
-            int begin = c_equation.lastIndexOf("(");
+        while(c_equation.contains('(')){
+            int begin = c_equation.lastIndexOf('(');
             int b_after = begin +1;
-            ArrayList<Character> p_equation = new ArrayList<Character>();
+            ArrayList<Character> p_equation = new ArrayList<>();
             while(c_equation.get(b_after) != ')') {
                 p_equation.add(c_equation.get(b_after));
                 b_after++;
@@ -42,7 +42,7 @@ public class Eval_Math {
 
                 //parser logic
                 int l_index = operator_index-1;
-                StringBuilder sl_index = new StringBuilder("");
+                StringBuilder sl_index = new StringBuilder();
                 while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
                     l_index--;
                     sl_index.append(p_equation.get(l_index));
@@ -52,13 +52,11 @@ public class Eval_Math {
 
                 // important note: r_index has to stop at the last number for your logic
                 int r_index = operator_index+1;
-                StringBuilder rl_index = new StringBuilder("");
+                StringBuilder rl_index = new StringBuilder();
                 while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
-                    if(r_index +1 == p_equation.size()){
 
-                    }
                 }
                 r_number = Double.parseDouble(String.valueOf(rl_index));
 
@@ -76,8 +74,8 @@ public class Eval_Math {
                     sum_number = l_number /100.0;
                 }
                 //this must be moved
-                for(int remove = r_index; remove>=l_index; remove--){
-                    p_equation.remove(remove);
+                if (r_index >= l_index) {
+                    p_equation.subList(l_index, r_index + 1).clear();
                 }
                 StringBuilder answer = new StringBuilder(String.valueOf(sum_number));
                 for(int i = 0; i < answer.length();i++){
@@ -85,12 +83,15 @@ public class Eval_Math {
                 }
 
 
-                for(int i = b_after; i >= begin; i--){
-                    c_equation.remove(i);
                 }
+            if (b_after >= begin) {
+                c_equation.subList(begin, b_after + 1).clear();
+            }
 
+            for(int i =0; i<p_equation.size(); i++){
+                c_equation.add(begin+i, p_equation.get(i));
+            }
 
-                }
 
         System.out.print(c_equation);
 
