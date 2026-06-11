@@ -43,6 +43,7 @@ public class Eval_Math {
                 //parser logic
                 int l_index = operator_index-1;
                 StringBuilder sl_index = new StringBuilder();
+                sl_index.append(p_equation.get(l_index));
                 while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
                     l_index--;
                     sl_index.append(p_equation.get(l_index));
@@ -53,6 +54,7 @@ public class Eval_Math {
                 // important note: r_index has to stop at the last number for your logic
                 int r_index = operator_index+1;
                 StringBuilder rl_index = new StringBuilder();
+                rl_index.append(p_equation.get(r_index));
                 while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
@@ -91,12 +93,33 @@ public class Eval_Math {
             for(int i =0; i<p_equation.size(); i++){
                 c_equation.add(begin+i, p_equation.get(i));
             }
+        while(!p_equation.contains('*') ||!p_equation.contains('/') || !p_equation.contains('%')){
+            for (int g = 0; g < p_equation.size(); g++) {
+                char operator = ' ';
+                int operator_index = -1;
 
+                char r = c_equation.get(g);
+                if (r == '*' || r == '/' || r == '%') {
+                     operator = r;
+
+                    operator_index = c_equation.indexOf(r);
+                    System.out.println(operator_index);
+
+                    break;
+
+
+                }
+
+
+            }
+
+        }
 
         System.out.print(c_equation);
 
         return i_equation;
     }
+
         return i_equation;
    }}
 
