@@ -58,7 +58,6 @@ public class Eval_Math {
                 while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
-
                 }
                 r_number = Double.parseDouble(String.valueOf(rl_index));
 
@@ -93,14 +92,23 @@ public class Eval_Math {
             for(int i =0; i<p_equation.size(); i++){
                 c_equation.add(begin+i, p_equation.get(i));
             }
-        while(c_equation.contains('*') && c_equation.contains('/') && c_equation.contains('%')){
+
+
+
+   }
+        while(c_equation.contains('*') || c_equation.contains('/') || c_equation.contains('%')){
+            double sum_number = 0;
+
+            double l_number;
+            double r_number;
+            char operator = ' ';
+            int operator_index = -1;
+
             for (int g = 0; g < c_equation.size(); g++) {
-                char operator = ' ';
-                int operator_index = -1;
 
                 char r = c_equation.get(g);
                 if (r == '*' || r == '/' || r == '%') {
-                     operator = r;
+                    operator = r;
 
                     operator_index = c_equation.indexOf(r);
                     //gives the operator for outside the parentheses
@@ -108,21 +116,47 @@ public class Eval_Math {
                     break;
 
 
-                }
-                    Double sum_number;
-                    if(operator =='*'){
 
-                    }
+
+                }
 
             }
+            //parser logic
+            int l_index = operator_index-1;
+            StringBuilder sl_index = new StringBuilder();
+            sl_index.append(c_equation.get(l_index));
+            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)))) {
+                l_index--;
+                sl_index.append(c_equation.get(l_index));
+            }
+            sl_index.reverse();
+            l_number = Double.parseDouble(String.valueOf(sl_index));
 
-        }
+            // important note: r_index has to stop at the last number for your logic
+            int r_index = operator_index+1;
+            StringBuilder rl_index = new StringBuilder();
+            rl_index.append(c_equation.get(r_index));
+            while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index+1)))){
+                r_index++;
+                rl_index.append(c_equation.get(r_index));
+            }
+            r_number = Double.parseDouble(String.valueOf(rl_index));
+            if(operator =='*'){
 
-        System.out.print(c_equation);
+            }
+            if(operator == '/'){
+                sum_number = l_number / r_number;
+            }
 
-        return i_equation;
-    }
+            if(operator == '%'){
+                sum_number = l_number /100.0;
 
-        return i_equation;
-   }}
+            System.out.print(c_equation);
+
+
+        };
+
+
+
+    }}}
 
