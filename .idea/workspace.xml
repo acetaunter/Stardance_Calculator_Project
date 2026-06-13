@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="Parser logic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +99,7 @@
       <workItem from="1781127749385" duration="9455000" />
       <workItem from="1781200501859" duration="2475000" />
       <workItem from="1781205850129" duration="1338000" />
+      <workItem from="1781311251548" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />

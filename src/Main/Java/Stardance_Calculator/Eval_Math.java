@@ -93,8 +93,8 @@ public class Eval_Math {
             for(int i =0; i<p_equation.size(); i++){
                 c_equation.add(begin+i, p_equation.get(i));
             }
-        while(!p_equation.contains('*') ||!p_equation.contains('/') || !p_equation.contains('%')){
-            for (int g = 0; g < p_equation.size(); g++) {
+        while(c_equation.contains('*') && c_equation.contains('/') && c_equation.contains('%')){
+            for (int g = 0; g < c_equation.size(); g++) {
                 char operator = ' ';
                 int operator_index = -1;
 
@@ -103,13 +103,16 @@ public class Eval_Math {
                      operator = r;
 
                     operator_index = c_equation.indexOf(r);
-                    System.out.println(operator_index);
+                    //gives the operator for outside the parentheses
 
                     break;
 
 
                 }
+                    Double sum_number;
+                    if(operator =='*'){
 
+                    }
 
             }
 
