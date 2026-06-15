@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="Parser logic for the outer layer">
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="copied the previous work from older lines to engineer outer loop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
     </list>
@@ -100,7 +100,8 @@
       <workItem from="1781127749385" duration="9455000" />
       <workItem from="1781200501859" duration="2475000" />
       <workItem from="1781205850129" duration="1338000" />
-      <workItem from="1781311251548" duration="6350000" />
+      <workItem from="1781311251548" duration="6691000" />
+      <workItem from="1781489901766" duration="7495000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />
@@ -198,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781311759823</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="copied the previous work from older lines to engineer outer loop">
+      <option name="closed" value="true" />
+      <created>1781324802576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781324802576</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +220,8 @@
     <MESSAGE value="evaluation for the parentheses and going to do more for the rest" />
     <MESSAGE value="Parser logic" />
     <MESSAGE value="Parser logic for the outer layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parser logic for the outer layer" />
+    <MESSAGE value="copied the previous work from older lines to engineer outer loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="copied the previous work from older lines to engineer outer loop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
