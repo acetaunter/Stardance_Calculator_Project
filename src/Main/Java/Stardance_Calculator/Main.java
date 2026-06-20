@@ -217,6 +217,7 @@ public class Main extends Application{
            String in_equation = User_equation.getText();
            System.out.println(in_equation);
                 String result = Eval_Math.Equation(in_equation);
+                User_equation.setText(result);
         });
 
         stage.setScene(scene);
