@@ -8,11 +8,30 @@ public class Eval_Math {
 
 
     public static String Equation(String i_equation){
+
+
         ArrayList<Character> c_equation = new ArrayList<>(i_equation.length());
+
         StringBuilder ceq = new StringBuilder( String.valueOf(c_equation));
         //creates the entire equation
         for(int e = 0; e < i_equation.length(); e++){
         c_equation.add(e, i_equation.charAt(e));
+        }
+        //exceptions
+        if(c_equation.contains('/')){
+            int o_index;
+            for(int g = 0; g<c_equation.size(); g++){
+                char o = c_equation.get(g);
+                if( o == '/'){
+                    o_index = g;
+                    if(c_equation.get(o_index +1) == '0'){
+                        return ("undefined");
+
+
+                    }
+                }
+
+            }
         }
         //substring code for the parentheses
         while(c_equation.contains('(')){
@@ -243,10 +262,15 @@ public class Eval_Math {
         int l_index = operator_index-1;
         StringBuilder sl_index = new StringBuilder();
         sl_index.append(c_equation.get(l_index));
-        while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)))) {
+        System.out.println(l_index);
+        boolean dec;
+        while(  l_index-1 >= 0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index-1) == '.')){
+           System.out.println(l_index);
+
             l_index--;
             sl_index.append(c_equation.get(l_index));
         }
+        System.out.println("Exited loop at index: " + l_index);
         sl_index.reverse();
         l_number = Double.parseDouble(String.valueOf(sl_index));
 
@@ -277,7 +301,7 @@ public class Eval_Math {
 
     }
     StringBuilder final_answer = new StringBuilder();
-        for(int i = 0; i< c_equation.size(); i++){
+        for(int i = 0; i< c_equation.size() ; i++){
             final_answer.append(c_equation.get(i));
         }
         return final_answer.toString();

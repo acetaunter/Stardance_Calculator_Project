@@ -13,6 +13,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static javafx.scene.paint.Color.BLUE;
+
 
 public class Main extends Application{
     // 25 pixel incremental for x direction
@@ -26,6 +28,7 @@ public class Main extends Application{
     public Scene Calculator_UI(Stage stage){
         Pane root = new Pane();
         TextField User_equation= new TextField();
+        User_equation.setEditable(false);
        User_equation.setLayoutX(130);
        User_equation.setLayoutY(0);
         root.getChildren().add(User_equation);
@@ -33,6 +36,7 @@ public class Main extends Application{
         Button one = new Button("1");
         one.setLayoutX(x_pos +10);
         one.setLayoutY(y_pos +100);
+        one.setTextFill(BLUE);
         root.getChildren().add(one);
         one.setOnAction(e->{
             User_equation.appendText("1");
