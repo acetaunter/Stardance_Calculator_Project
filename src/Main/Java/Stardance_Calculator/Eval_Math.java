@@ -205,7 +205,7 @@ public class Eval_Math {
             sl_index.append(c_equation.get(l_index));
             System.out.println( "L_index" + l_index);
 
-            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index) == '.')) {
+            while(  l_index -1>=0 && ((Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index) == '.'))) {
                 if(c_equation.get(l_index)== '.'){
                     System.out.println("this is for decimals");
                 }
@@ -220,7 +220,7 @@ public class Eval_Math {
             int r_index = operator_index+1;
             StringBuilder rl_index = new StringBuilder();
             rl_index.append(c_equation.get(r_index));
-            boolean one_dot;
+            boolean one_dot = false;
 
 
             System.out.println("R_index: " + r_index);
@@ -233,14 +233,13 @@ public class Eval_Math {
                 System.out.println("rl_index after incrementation append"+ rl_index);
                 if(c_equation.get(r_index ) == '.'){
                      one_dot = true;
-                    rl_index.append(c_equation.get(r_index));
-                    System.out.println("decimal appended");
-                    if(one_dot == true && c_equation.get(r_index))
 
-                    while(Character.isDigit(c_equation.get(r_index))) {
-                        rl_index.append(c_equation.get(r_index));
-                        r_index++;
-                    }
+
+                    System.out.println("decimal appended");
+
+                }
+                if(one_dot == true && c_equation.get(r_index) == '.'){
+                    break;
                 }
                 System.out.print("rl_index" + rl_index);
             }
@@ -251,7 +250,7 @@ public class Eval_Math {
             System.out.println(c_equation.get( (r_index + 1)));
             System.out.println("decimal index:" +(r_index + 1));
             System.out.print("number after decimal");
-            System.out.println(c_equation.get(r_index +2));
+
 
 
             //operator eval for full equation
