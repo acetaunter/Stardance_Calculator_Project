@@ -203,22 +203,57 @@ public class Eval_Math {
             int l_index = operator_index-1;
             StringBuilder sl_index = new StringBuilder();
             sl_index.append(c_equation.get(l_index));
-            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)))) {
+            System.out.println( "L_index" + l_index);
+
+            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index) == '.')) {
+                if(c_equation.get(l_index)== '.'){
+                    System.out.println("this is for decimals");
+                }
                 l_index--;
                 sl_index.append(c_equation.get(l_index));
             }
             sl_index.reverse();
             l_number = Double.parseDouble(String.valueOf(sl_index));
+            System.out.println("L_number"+l_number);
 
             // important note: r_index has to stop at the last number for your logic
             int r_index = operator_index+1;
             StringBuilder rl_index = new StringBuilder();
             rl_index.append(c_equation.get(r_index));
-            while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index+1)))){
+            boolean one_dot;
+
+
+            System.out.println("R_index: " + r_index);
+            while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index))|| c_equation.get(r_index) ==  '.')){
+
+
                 r_index++;
+
                 rl_index.append(c_equation.get(r_index));
+                System.out.println("rl_index after incrementation append"+ rl_index);
+                if(c_equation.get(r_index ) == '.'){
+                     one_dot = true;
+                    rl_index.append(c_equation.get(r_index));
+                    System.out.println("decimal appended");
+                    if(one_dot == true && c_equation.get(r_index))
+
+                    while(Character.isDigit(c_equation.get(r_index))) {
+                        rl_index.append(c_equation.get(r_index));
+                        r_index++;
+                    }
+                }
+                System.out.print("rl_index" + rl_index);
             }
             r_number = Double.parseDouble(String.valueOf(rl_index));
+            System.out.println("rl_index"+ rl_index);
+            System.out.println("Right number:"+r_number);
+            System.out.print("char after right number:");
+            System.out.println(c_equation.get( (r_index + 1)));
+            System.out.println("decimal index:" +(r_index + 1));
+            System.out.print("number after decimal");
+            System.out.println(c_equation.get(r_index +2));
+
+
             //operator eval for full equation
             if(operator =='*'){
                 sum_number = l_number * r_number;
@@ -263,7 +298,7 @@ public class Eval_Math {
         StringBuilder sl_index = new StringBuilder();
         sl_index.append(c_equation.get(l_index));
         System.out.println(l_index);
-        boolean dec;
+
         while(  l_index-1 >= 0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index-1) == '.')){
            System.out.println(l_index);
 
