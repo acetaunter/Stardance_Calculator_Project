@@ -236,22 +236,28 @@ public class Eval_Math {
                      if(one_dot && Character.isDigit(c_equation.get(r_index+1))){
                          r_index++;
                          rl_index.append(c_equation.get(r_index));
-                         continue;
+                        continue;
                      }
+
+                while(Character.isDigit(c_equation.get(r_index+1))){
+                    r_index++;
+                    rl_index.append(c_equation.get(r_index));
+                    if(one_dot == true && c_equation.get(r_index+1) == '.'){
+                        break;
+                    }
+                }
 
                     System.out.println("decimal appended");
 
                 }
-                if(one_dot == true && c_equation.get(r_index+1) == '.'){
-                    break;
-                }
+              //where the conditional should go
                 System.out.print("rl_index" + rl_index);
             }
             r_number = Double.parseDouble(String.valueOf(rl_index));
             System.out.println("rl_index"+ rl_index);
             System.out.println("Right number:"+r_number);
             System.out.print("char after right number:");
-            System.out.println(c_equation.get( (r_index + 1)));
+
             System.out.println("decimal index:" +(r_index + 1));
             System.out.print("number after decimal");
 
