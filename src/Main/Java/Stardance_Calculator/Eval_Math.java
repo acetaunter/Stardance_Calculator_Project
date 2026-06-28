@@ -233,12 +233,16 @@ public class Eval_Math {
                 System.out.println("rl_index after incrementation append"+ rl_index);
                 if(c_equation.get(r_index ) == '.'){
                      one_dot = true;
-
+                     if(one_dot && Character.isDigit(c_equation.get(r_index+1))){
+                         r_index++;
+                         rl_index.append(c_equation.get(r_index));
+                         continue;
+                     }
 
                     System.out.println("decimal appended");
 
                 }
-                if(one_dot == true && c_equation.get(r_index) == '.'){
+                if(one_dot == true && c_equation.get(r_index+1) == '.'){
                     break;
                 }
                 System.out.print("rl_index" + rl_index);
