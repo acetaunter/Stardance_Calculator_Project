@@ -204,13 +204,15 @@ public class Eval_Math {
             StringBuilder sl_index = new StringBuilder();
             sl_index.append(c_equation.get(l_index));
             System.out.println( "L_index" + l_index);
+            boolean oneDot = false;
+            while(  l_index -1>0 && (Character.isDigit(c_equation.get(l_index)) || c_equation.get(l_index) == '.')) {
 
-            while(  l_index -1>=0 && ((Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index) == '.'))) {
-                if(c_equation.get(l_index)== '.'){
-                    System.out.println("this is for decimals");
-                }
                 l_index--;
+                System.out.println(l_index);
                 sl_index.append(c_equation.get(l_index));
+                System.out.println(sl_index);
+                System.out.println("after incrementation appended" + sl_index);
+
             }
             sl_index.reverse();
             l_number = Double.parseDouble(String.valueOf(sl_index));
@@ -254,12 +256,6 @@ public class Eval_Math {
                 System.out.print("rl_index" + rl_index);
             }
             r_number = Double.parseDouble(String.valueOf(rl_index));
-            System.out.println("rl_index"+ rl_index);
-            System.out.println("Right number:"+r_number);
-            System.out.print("char after right number:");
-
-            System.out.println("decimal index:" +(r_index + 1));
-            System.out.print("number after decimal");
 
 
 

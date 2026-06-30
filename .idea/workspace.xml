@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="its getting fixed, testing it on the right index for now">
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="finally fixed it through the test of the right parser for the decimal and multi decimal logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" afterDir="false" />
@@ -121,7 +121,7 @@
       <workItem from="1782254685123" duration="3432000" />
       <workItem from="1782515108221" duration="2671000" />
       <workItem from="1782590880483" duration="9099000" />
-      <workItem from="1782619321535" duration="1979000" />
+      <workItem from="1782619321535" duration="7893000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />
@@ -283,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782620121725</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="finally fixed it through the test of the right parser for the decimal and multi decimal logic">
+      <option name="closed" value="true" />
+      <created>1782678121481</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1782678121481</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +311,8 @@
     <MESSAGE value="new issue of decimal stuff, it's difficult but doable with the types of ideas" />
     <MESSAGE value="still trying to fix the decimal issue" />
     <MESSAGE value="its getting fixed, testing it on the right index for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="its getting fixed, testing it on the right index for now" />
+    <MESSAGE value="finally fixed it through the test of the right parser for the decimal and multi decimal logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally fixed it through the test of the right parser for the decimal and multi decimal logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
