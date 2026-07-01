@@ -205,16 +205,37 @@ public class Eval_Math {
             sl_index.append(c_equation.get(l_index));
             System.out.println( "L_index" + l_index);
             boolean oneDot = false;
-            while(  l_index -1>0 && (Character.isDigit(c_equation.get(l_index)) || c_equation.get(l_index) == '.')) {
+            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index)) || c_equation.get(l_index) == '.')) {
 
                 l_index--;
-                System.out.println(l_index);
+                System.out.println("l_index: "+l_index);
                 sl_index.append(c_equation.get(l_index));
-                System.out.println(sl_index);
+                System.out.println("sl_index: "+sl_index);
                 System.out.println("after incrementation appended" + sl_index);
+                if(c_equation.get(l_index) == '.' ){
+                    oneDot = true;
+                    if(oneDot && Character.isDigit(c_equation.get(l_index-1))){
+                        l_index--;
+                        sl_index.append(c_equation.get(l_index));
+                        continue;
+                    }
+                    while(Character.isDigit(c_equation.get(l_index-1))){
+                        l_index--;
+                        sl_index.append(c_equation.get(l_index));
+                        if(oneDot && c_equation.get(l_index -1)== '.'){
+                            break;
+                        }
+                    }
+
+
+
+
+
+                }
 
             }
             sl_index.reverse();
+
             l_number = Double.parseDouble(String.valueOf(sl_index));
             System.out.println("L_number"+l_number);
 
