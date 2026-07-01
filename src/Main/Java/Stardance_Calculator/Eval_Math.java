@@ -249,7 +249,13 @@ public class Eval_Math {
             System.out.println("R_index: " + r_index);
             while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index))|| c_equation.get(r_index) ==  '.')){
 
-
+                if(c_equation.get(r_index+1)== '*'
+                        || c_equation.get(r_index+1)== '/'
+                        ||c_equation.get(r_index+1)== '%'
+                        ||c_equation.get(r_index+1)== '+'
+                        ||c_equation.get(r_index+1)== '-' ){
+                    break;
+                }
                 r_index++;
 
                 rl_index.append(c_equation.get(r_index));
@@ -259,10 +265,12 @@ public class Eval_Math {
                      if(one_dot && Character.isDigit(c_equation.get(r_index+1))){
                          r_index++;
                          rl_index.append(c_equation.get(r_index));
+
                         continue;
                      }
 
                 while(Character.isDigit(c_equation.get(r_index+1))){
+
                     r_index++;
                     rl_index.append(c_equation.get(r_index));
                     if(one_dot == true && c_equation.get(r_index+1) == '.'){
