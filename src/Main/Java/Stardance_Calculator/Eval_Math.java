@@ -83,6 +83,13 @@ public class Eval_Math {
                 StringBuilder rl_index = new StringBuilder();
                 rl_index.append(p_equation.get(r_index));
                 while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
+                    if(c_equation.get(r_index+1)== '*'
+                            || c_equation.get(r_index+1)== '/'
+                            ||c_equation.get(r_index+1)== '%'
+                            ||c_equation.get(r_index+1)== '+'
+                            ||c_equation.get(r_index+1)== '-' ){
+                        break;
+                    }
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
                 }
@@ -206,7 +213,13 @@ public class Eval_Math {
             System.out.println( "L_index" + l_index);
             boolean oneDot = false;
             while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index)) || c_equation.get(l_index) == '.')) {
-
+                if(c_equation.get(l_index-1)== '*'
+                        || c_equation.get(l_index-1)== '/'
+                        ||c_equation.get(l_index-1)== '%'
+                        ||c_equation.get(l_index-1)== '+'
+                        ||c_equation.get(l_index-1)== '-' ){
+                    break;
+                }
                 l_index--;
                 System.out.println("l_index: "+l_index);
                 sl_index.append(c_equation.get(l_index));
