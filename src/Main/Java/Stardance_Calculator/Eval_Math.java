@@ -382,24 +382,76 @@ public class Eval_Math {
         StringBuilder sl_index = new StringBuilder();
         sl_index.append(c_equation.get(l_index));
         System.out.println(l_index);
+        boolean OneDot = false;
 
         while(  l_index-1 >= 0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index-1) == '.')){
+            if(c_equation.get(l_index-1)== '*'
+                    || c_equation.get(l_index-1)== '/'
+                    ||c_equation.get(l_index-1)== '%'
+                    ||c_equation.get(l_index-1)== '+'
+                    ||c_equation.get(l_index-1)== '-' ){
+                break;
+            }
            System.out.println(l_index);
-
+           System.out.println("first number" + sl_index);
             l_index--;
             sl_index.append(c_equation.get(l_index));
+            if(c_equation.get(l_index)== '.'){
+                OneDot = true;
+                if(OneDot && Character.isDigit(c_equation.get(l_index-1))){
+                    l_index--;
+                    sl_index.append(c_equation.get(l_index));
+                    System.out.println("after decimal:" + sl_index);
+                    continue;
+
+                }
+                while(Character.isDigit(c_equation.get(l_index-1))){
+                    l_index--;
+                    sl_index.append(c_equation.get(l_index));
+                    if(OneDot == true && c_equation.get(l_index-1) == '.'){
+                        break;
+                    }
+                }
+            }
         }
         System.out.println("Exited loop at index: " + l_index);
         sl_index.reverse();
+        System.out.println("final index for left number" + sl_index);
         l_number = Double.parseDouble(String.valueOf(sl_index));
 
         // important note: r_index has to stop at the last number for your logic
         int r_index = operator_index+1;
         StringBuilder rl_index = new StringBuilder();
         rl_index.append(c_equation.get(r_index));
-        while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index+1)))){
+        boolean r_dot;
+        System.out.println("right number at the beginning" + rl_index);
+        while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index+1))|| c_equation.get(r_index+1) == '.')){
+            if(c_equation.get(r_index+1)== '*'
+                    || c_equation.get(r_index+1)== '/'
+                    ||c_equation.get(r_index+1)== '%'
+                    ||c_equation.get(r_index+1)== '+'
+                    ||c_equation.get(r_index+1)== '-' ){
+                break;
+            }
+
             r_index++;
+            System.out.println("right number before decimal" + rl_index);
             rl_index.append(c_equation.get(r_index));
+            if(c_equation.get(r_index)== '.'){
+                r_dot = true;
+                if(r_dot && Character.isDigit(c_equation.get(r_index+1))){
+                    r_index++;
+                    rl_index.append(c_equation.get(r_index));
+                    continue;
+                }
+                while(Character.isDigit(c_equation.get(r_index+1))){
+                    r_index++;
+                    rl_index.append(c_equation.get(r_index));
+                    if(r_dot && c_equation.get(r_index+1) == '.'){
+                        break;
+                    }
+                }
+            }
         }
         r_number = Double.parseDouble(String.valueOf(rl_index));
 
@@ -407,7 +459,11 @@ public class Eval_Math {
             sum_number = l_number - r_number;
         }
         if(operator == '+'){
+            System.out.println("addition");
+            System.out.println(l_number+" =left number");
+            System.out.println(r_number + " =right number");
             sum_number = l_number + r_number;
+
         }
 
         if (r_index >= l_index) {
@@ -423,11 +479,7 @@ public class Eval_Math {
         for(int i = 0; i< c_equation.size() ; i++){
             final_answer.append(c_equation.get(i));
         }
-        if(Double.valueOf(String.valueOf(final_answer)) < 0){
-           System.out.println("this means this was negative");
-            final_answer.insert(0,'-');
 
-        }
         return final_answer.toString();
 
     }}
