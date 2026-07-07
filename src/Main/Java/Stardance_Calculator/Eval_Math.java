@@ -82,8 +82,9 @@ public class Eval_Math {
                 int r_index = operator_index+1;
                 StringBuilder rl_index = new StringBuilder();
                 rl_index.append(p_equation.get(r_index));
-                while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)))){
-                    if(c_equation.get(r_index+1)== '*'
+                boolean oneDot = false;
+                while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)) || p_equation.get(r_index) == '.')){
+                    if(p_equation.get(r_index+1)== '*'
                             || c_equation.get(r_index+1)== '/'
                             ||c_equation.get(r_index+1)== '%'
                             ||c_equation.get(r_index+1)== '+'
@@ -92,6 +93,23 @@ public class Eval_Math {
                     }
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
+                    if(p_equation.get(r_index) == '.'){
+                        oneDot = true;
+                        if(oneDot && Character.isDigit(p_equation.get(r_index+1))){
+                            r_index++;
+                            rl_index.append(p_equation.get(r_index));
+
+                            continue;
+                        }
+                        while(Character.isDigit(p_equation.get(r_index+1))){
+
+                            r_index++;
+                            rl_index.append(c_equation.get(r_index));
+                            if(oneDot == true && c_equation.get(r_index+1)== '.'){
+                                break;
+                            }
+                        }
+                    }
                 }
                 r_number = Double.parseDouble(String.valueOf(rl_index));
 
@@ -138,9 +156,28 @@ public class Eval_Math {
                 int l_index = operator_index-1;
                 StringBuilder sl_index = new StringBuilder();
                 sl_index.append(p_equation.get(l_index));
+                boolean one_dot = false;
                 while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
+
+                    if(p_equation.get(l_index+1)== '*'
+                            || c_equation.get(l_index+1)== '/'
+                            ||c_equation.get(l_index+1)== '%'
+                            ||c_equation.get(l_index+1)== '+'
+                            ||c_equation.get(l_index+1)== '-' ){
+                        break;
+                    }
                     l_index--;
                     sl_index.append(p_equation.get(l_index));
+                    if(p_equation.get(l_index)== '.'){
+                        one_dot = true;
+                        if(one_dot && Character.isDigit(p_equation.get(l_index-1))){
+                            l_index--;
+                            sl_index.append(p_equation.get(l_index));
+                            if(one_dot && p_equation.get(l_index -1)== '.'){
+                                break;
+                            }
+                        }
+                    }
                 }
                 sl_index.reverse();
                 l_number = Double.parseDouble(String.valueOf(sl_index));
@@ -385,6 +422,11 @@ public class Eval_Math {
     StringBuilder final_answer = new StringBuilder();
         for(int i = 0; i< c_equation.size() ; i++){
             final_answer.append(c_equation.get(i));
+        }
+        if(Double.valueOf(String.valueOf(final_answer)) < 0){
+           System.out.println("this means this was negative");
+            final_answer.insert(0,'-');
+
         }
         return final_answer.toString();
 
