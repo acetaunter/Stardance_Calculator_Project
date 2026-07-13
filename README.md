@@ -120,4 +120,12 @@ better error handling
 
 Goal:
 Even with the basics you can make something really cool
-)
+
+How to run:
+Option A(recommended)
+
+Used intellij and then the maven tool and go to javafx and then javafx:run
+
+Optiona B
+use mv or download it 
+go into the commmand line and then do mvn javafx:run
