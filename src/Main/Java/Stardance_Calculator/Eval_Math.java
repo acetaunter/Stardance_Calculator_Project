@@ -403,7 +403,7 @@ public class Eval_Math {
                     || c_equation.get(l_index-1)== '/'
                     ||c_equation.get(l_index-1)== '%'
                     ||c_equation.get(l_index-1)== '+'
-                    ||c_equation.get(l_index-1)== '-' ){
+                    ||(c_equation.get(l_index-1)== '-' && Character.isDigit(l_index-2))){
                 break;
             }
            System.out.println(l_index);
