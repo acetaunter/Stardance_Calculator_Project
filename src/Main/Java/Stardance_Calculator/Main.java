@@ -13,6 +13,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 import static javafx.scene.paint.Color.BLUE;
 
 
@@ -41,6 +42,11 @@ public class Main extends Application{
         one.setOnAction(e->{
             User_equation.appendText("1");
             counter++;
+            if(counter == 2 ){
+                User_equation.deleteText(1,'1');
+                System.out.println("hit threshold");
+            }
+
         });
 
         Button two = new Button("2");
@@ -228,6 +234,8 @@ public class Main extends Application{
         stage.show();
         return scene;
     }
+
+
     public static void main( String[] args){
         launch(args);
     }

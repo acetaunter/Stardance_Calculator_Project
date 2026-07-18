@@ -239,22 +239,35 @@ public class Eval_Math {
 
 
 
-
                 }
 
             }
+            if (operator_index == 0 ||
+                    (!Character.isDigit(c_equation.get(operator_index - 1)) &&
+                            c_equation.get(operator_index - 1) != ')')) {
+
+                continue;
+            }
             //parser logic
             int l_index = operator_index-1;
+            boolean L_Negative_number = false;
+            if (l_index - 1 >= 0 && c_equation.get(l_index - 1) == '-') {
+                L_Negative_number = true;
+            }
             StringBuilder sl_index = new StringBuilder();
-            sl_index.append(c_equation.get(l_index));
+            if (Character.isDigit(c_equation.get(l_index)) ||
+                    c_equation.get(l_index) == '.') {
+                sl_index.append(c_equation.get(l_index));
+            }
+
             System.out.println( "L_index" + l_index);
             boolean oneDot = false;
-            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index)) || c_equation.get(l_index) == '.')) {
-                if(c_equation.get(l_index-1)== '*'
+            while(  l_index -1>=0 && (Character.isDigit(c_equation.get(l_index-1)) || c_equation.get(l_index-1) == '.')) {
+                if((c_equation.get(l_index-1)== '*'
                         || c_equation.get(l_index-1)== '/'
                         ||c_equation.get(l_index-1)== '%'
                         ||c_equation.get(l_index-1)== '+'
-                        ||c_equation.get(l_index-1)== '-' ){
+                        ||c_equation.get(l_index-1)== '-' )){
                     break;
                 }
                 l_index--;
@@ -262,23 +275,20 @@ public class Eval_Math {
                 sl_index.append(c_equation.get(l_index));
                 System.out.println("sl_index: "+sl_index);
                 System.out.println("after incrementation appended" + sl_index);
-                if(c_equation.get(l_index) == '.' ){
+                if((l_index - 1 >= 0&&c_equation.get(l_index-1) == '.' )){
                     oneDot = true;
-                    if(oneDot && Character.isDigit(c_equation.get(l_index-1))){
+                    if(l_index - 1 >= 0 && oneDot && Character.isDigit(c_equation.get(l_index-1))){
                         l_index--;
                         sl_index.append(c_equation.get(l_index));
                         continue;
                     }
-                    while(Character.isDigit(c_equation.get(l_index-1))){
+                    while(l_index - 1 >= 0 && Character.isDigit(c_equation.get(l_index-1))){
                         l_index--;
                         sl_index.append(c_equation.get(l_index));
-                        if(oneDot && c_equation.get(l_index -1)== '.'){
+                        if(l_index - 1 >= 0 && oneDot && c_equation.get(l_index -1)== '.'){
                             break;
                         }
                     }
-
-
-
 
 
                 }
@@ -287,6 +297,9 @@ public class Eval_Math {
             sl_index.reverse();
 
             l_number = Double.parseDouble(String.valueOf(sl_index));
+            if(L_Negative_number){
+                l_number = -l_number;
+            }
             System.out.println("L_number"+l_number);
 
             // important note: r_index has to stop at the last number for your logic
@@ -297,7 +310,7 @@ public class Eval_Math {
 
 
             System.out.println("R_index: " + r_index);
-            while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index))|| c_equation.get(r_index) ==  '.')){
+            while(  r_index +1 <c_equation.size() && (Character.isDigit(c_equation.get(r_index+1))|| c_equation.get(r_index+1) ==  '.')){
 
                 if(c_equation.get(r_index+1)== '*'
                         || c_equation.get(r_index+1)== '/'
@@ -342,6 +355,7 @@ public class Eval_Math {
             if(operator =='*'){
                 sum_number = l_number * r_number;
             }
+
             if(operator == '/'){
                 sum_number = l_number / r_number;
             }
@@ -395,20 +409,23 @@ public class Eval_Math {
            System.out.println(l_index);
            System.out.println("first number" + sl_index);
             l_index--;
+            if (l_index == 0) {
+                break;
+            }
             sl_index.append(c_equation.get(l_index));
-            if(c_equation.get(l_index)== '.'){
+            if(l_index - 1 >= 0 && c_equation.get(l_index)== '.'){
                 OneDot = true;
-                if(OneDot && Character.isDigit(c_equation.get(l_index-1))){
+                if(l_index - 1 >= 0 && OneDot && Character.isDigit(c_equation.get(l_index-1))){
                     l_index--;
                     sl_index.append(c_equation.get(l_index));
                     System.out.println("after decimal:" + sl_index);
                     continue;
 
                 }
-                while(Character.isDigit(c_equation.get(l_index-1))){
+                while( l_index - 1 >= 0 && Character.isDigit(c_equation.get(l_index-1))){
                     l_index--;
                     sl_index.append(c_equation.get(l_index));
-                    if(OneDot == true && c_equation.get(l_index-1) == '.'){
+                    if(l_index - 1 >= 0 &&OneDot == true && c_equation.get(l_index-1) == '.'){
                         break;
                     }
                 }

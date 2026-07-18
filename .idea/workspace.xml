@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="decimals now work for parentheses, added logic">
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="decimals now work for addition as well">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +129,9 @@
       <workItem from="1782954372294" duration="563000" />
       <workItem from="1782987150147" duration="347000" />
       <workItem from="1783374607679" duration="5010000" />
-      <workItem from="1783412281074" duration="6401000" />
+      <workItem from="1783412281074" duration="7240000" />
+      <workItem from="1783671313432" duration="1380000" />
+      <workItem from="1784281462879" duration="8260000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />
@@ -321,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783383565244</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="decimals now work for addition as well">
+      <option name="closed" value="true" />
+      <created>1783421955560</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1783421955560</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +357,8 @@
     <MESSAGE value="new errors trying to fix the left parser, right parser done, after left parser, do unary negation" />
     <MESSAGE value="now able to eval stuff like 6*6*6" />
     <MESSAGE value="decimals now work for parentheses, added logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="decimals now work for parentheses, added logic" />
+    <MESSAGE value="decimals now work for addition as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="decimals now work for addition as well" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
