@@ -28,6 +28,8 @@ public class Main extends Application{
     int Minus_consecutive = 0;
     int Div_consecutive = 0;
     int Mult_consecutive = 0;
+    int L_Consecutive = 0;
+    int R_Consecutive = 1;
     @Override
     public void start(Stage stage){
         stage.setScene(Calculator_UI(stage));
@@ -216,8 +218,12 @@ public class Main extends Application{
         L_Parenthese.setLayoutX(x_pos +10);
         L_Parenthese.setLayoutY(y_pos +25);
         L_Parenthese.setOnAction(e->{
-            User_equation.appendText("(");
-            counter++;
+            L_Consecutive++;
+            if(L_Consecutive == 1) {
+                User_equation.appendText("(");
+                R_Consecutive = 0;
+            }
+
         });
 
         Button R_Parenthese = new Button(")");
@@ -225,18 +231,15 @@ public class Main extends Application{
         R_Parenthese.setLayoutX(x_pos +30);
         R_Parenthese.setLayoutY(y_pos +25);
         R_Parenthese.setOnAction(e->{
-            User_equation.appendText(")");
-            counter++;
-        });
 
-        Button Percent = new Button("%");
-        root.getChildren().add(Percent);
-        Percent.setLayoutX(x_pos +50);
-        Percent.setLayoutY(y_pos +25);
-        Percent.setOnAction(e->{
-            User_equation.appendText("%");
+            if(R_Consecutive == 0) {
+                User_equation.appendText(")");
+                L_Consecutive = 0;
+                R_Consecutive++;
+            }
 
         });
+
 
         Button AC = new Button("AC");
         root.getChildren().add(AC);
