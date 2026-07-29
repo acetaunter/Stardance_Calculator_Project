@@ -19,9 +19,15 @@ import static javafx.scene.paint.Color.BLUE;
 
 public class Main extends Application{
     // 25 pixel incremental for x direction
+
     int y_pos = 0;
     int x_pos = 130;
     int counter = 0;
+    // manual double checkers
+    int Plus_consecutive = 0;
+    int Minus_consecutive = 0;
+    int Div_consecutive = 0;
+    int Mult_consecutive = 0;
     @Override
     public void start(Stage stage){
         stage.setScene(Calculator_UI(stage));
@@ -41,11 +47,7 @@ public class Main extends Application{
         root.getChildren().add(one);
         one.setOnAction(e->{
             User_equation.appendText("1");
-            counter++;
-            if(counter == 2 ){
-                User_equation.deleteText(1,'1');
-                System.out.println("hit threshold");
-            }
+
 
         });
 
@@ -138,9 +140,18 @@ public class Main extends Application{
         root.getChildren().add(plus);
         plus.setLayoutX(x_pos +70);
         plus.setLayoutY(y_pos +125);
+
         plus.setOnAction(e->{
-            User_equation.appendText("+");
-            counter++;
+
+            Plus_consecutive++;
+
+            if(Plus_consecutive == 1) {
+                User_equation.appendText("+");
+                Minus_consecutive = 0;
+                Div_consecutive = 0;
+                Mult_consecutive = 0;
+            }
+
         });
 
 
@@ -149,8 +160,15 @@ public class Main extends Application{
         minus.setLayoutX(x_pos +70);
         minus.setLayoutY(y_pos +100);
         minus.setOnAction(e->{
-            User_equation.appendText("-");
-            counter++;
+
+            Minus_consecutive++;
+
+            if(Minus_consecutive == 1) {
+                User_equation.appendText("-");
+                Plus_consecutive = 0;
+                Div_consecutive = 0;
+                Mult_consecutive = 0;
+            }
         });
 
         Button multi = new Button("*");
@@ -158,8 +176,14 @@ public class Main extends Application{
         multi.setLayoutX(x_pos +70);
         multi.setLayoutY(y_pos +75);
         multi.setOnAction(e->{
-            User_equation.appendText("*");
-            counter++;
+            Mult_consecutive++;
+
+            if(Mult_consecutive == 1) {
+                User_equation.appendText("*");
+                Div_consecutive = 0;
+                Plus_consecutive = 0;
+                Minus_consecutive = 0;
+            }
         });
 
         Button divide = new Button("/");
@@ -167,11 +191,16 @@ public class Main extends Application{
         divide.setLayoutX(x_pos +70);
         divide.setLayoutY(y_pos +50);
         divide.setOnAction(e->{
-            User_equation.appendText("/");
-            counter++;
+            Div_consecutive++;
+            if(Div_consecutive == 1) {
+                User_equation.appendText("/");
+                Mult_consecutive = 0;
+                Plus_consecutive = 0;
+                Minus_consecutive = 0;
+            }
+
         });
 
-        //
         Button decimal = new Button(".");
         root.getChildren().add(decimal);
         decimal.setLayoutX(x_pos +30);
