@@ -24,7 +24,7 @@ public class Main extends Application{
     int x_pos = 130;
     int counter = 0;
     // manual double checkers
-    int Plus_consecutive = 0;
+    int Plus_consecutive = 1;
     int Minus_consecutive = 0;
     int Div_consecutive = 0;
     int Mult_consecutive = 0;
@@ -48,8 +48,13 @@ public class Main extends Application{
         one.setTextFill(BLUE);
         root.getChildren().add(one);
         one.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("1");
-
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
 
         });
 
@@ -58,8 +63,13 @@ public class Main extends Application{
         two.setLayoutY(y_pos +100);
         root.getChildren().add(two);
         two.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("2");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
 
@@ -68,8 +78,13 @@ public class Main extends Application{
         three.setLayoutY(y_pos +100);
        root.getChildren().add(three);
         three.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("3");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         Button four = new Button("4");
@@ -77,8 +92,13 @@ public class Main extends Application{
         four.setLayoutY(y_pos +75);
         root.getChildren().add(four);
         four.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("4");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
 
@@ -87,8 +107,13 @@ public class Main extends Application{
         five.setLayoutY(y_pos +75);
         root.getChildren().add(five);
         five.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("5");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
 
@@ -97,8 +122,13 @@ public class Main extends Application{
         six.setLayoutY(y_pos +75);
         root.getChildren().add(six);
         six.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("6");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         Button seven = new Button("7");
@@ -106,8 +136,13 @@ public class Main extends Application{
         seven.setLayoutY(y_pos +50);
         root.getChildren().add(seven);
         seven.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("7");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         Button eight = new Button("8");
@@ -115,8 +150,13 @@ public class Main extends Application{
         eight.setLayoutY(y_pos +50);
         root.getChildren().add(eight);
         eight.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("8");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         Button nine = new Button("9");
@@ -124,8 +164,13 @@ public class Main extends Application{
         nine.setLayoutY(y_pos +50);
         root.getChildren().add(nine);
         nine.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("9");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         Button zero = new Button("0");
@@ -133,8 +178,13 @@ public class Main extends Application{
         zero.setLayoutY(y_pos +125);
         root.getChildren().add(zero);
         zero.setOnAction(e->{
+            if (User_equation.getText().contains("undefined")){
+                User_equation.clear();
+            }
             User_equation.appendText("0");
-            counter++;
+            Minus_consecutive = 0;
+            Div_consecutive = 0;
+            Mult_consecutive = 0;
         });
 
         //operations code
