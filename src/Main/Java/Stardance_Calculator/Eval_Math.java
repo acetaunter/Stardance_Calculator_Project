@@ -160,6 +160,7 @@ public class Eval_Math {
                 }
                 //parser logic
                 int l_index = operator_index-1;
+
                 if (l_index < 0 || l_index >= c_equation.size()) {
                     System.out.println("Invalid l_index: " + l_index + " for operator at " + operator_index);
                     break;
@@ -426,7 +427,7 @@ public class Eval_Math {
 
         int l_index = operator_index-1;
         System.out.println( "l_index at the start "+c_equation.get(l_index));
-
+        StringBuilder sl_index = new StringBuilder();
 
         boolean L_Negative_number = false;
         if (l_index - 1 >= 0 && c_equation.get(l_index - 1) == '-') {
@@ -444,6 +445,7 @@ public class Eval_Math {
                 System.out.println("negative"); // a marker for the terminal
                 L_Negative_number = true; //makes it a negative
                 l_index--; //adds unary
+                System.out.println("after unary detection" + c_equation.get(l_index));
             }
 
         }
@@ -451,7 +453,7 @@ public class Eval_Math {
             System.out.println("Invalid l_index: " + l_index + " for operator at " + operator_index);
             break;
         }
-        StringBuilder sl_index = new StringBuilder();
+
         sl_index.append(c_equation.get(l_index));
         System.out.println(sl_index);
         System.out.println(l_index);
@@ -468,9 +470,7 @@ public class Eval_Math {
            System.out.println(l_index);
            System.out.println("first number" + sl_index);
             l_index--;
-            if (l_index == 0) {
-                break;
-            }
+
             sl_index.append(c_equation.get(l_index));
 
             if(l_index - 1 >= 0 && c_equation.get(l_index)== '.'){

@@ -70,6 +70,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
 
@@ -85,6 +86,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         Button four = new Button("4");
@@ -99,6 +101,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
 
@@ -114,6 +117,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
 
@@ -129,6 +133,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         Button seven = new Button("7");
@@ -143,6 +148,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         Button eight = new Button("8");
@@ -157,6 +163,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         Button nine = new Button("9");
@@ -171,6 +178,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         Button zero = new Button("0");
@@ -185,6 +193,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
+            Plus_consecutive = 0;
         });
 
         //operations code
@@ -232,9 +241,7 @@ public class Main extends Application{
 
             if(Mult_consecutive == 1) {
                 User_equation.appendText("*");
-                Div_consecutive = 0;
-                Plus_consecutive = 0;
-                Minus_consecutive = 0;
+
             }
         });
 
@@ -246,8 +253,6 @@ public class Main extends Application{
             Div_consecutive++;
             if(Div_consecutive == 1) {
                 User_equation.appendText("/");
-                Mult_consecutive = 0;
-                Plus_consecutive = 0;
                 Minus_consecutive = 0;
             }
 
