@@ -41,7 +41,17 @@ public class Main extends Application{
        User_equation.setLayoutX(130);
        User_equation.setLayoutY(0);
         root.getChildren().add(User_equation);
+        Button equals = new Button("=");
+        root.getChildren().add(equals);
+        equals.setLayoutX(x_pos +50);
+        equals.setLayoutY(y_pos +125);
+        equals.setOnAction(e->{
 
+            String in_equation = User_equation.getText();
+            System.out.println(in_equation);
+            String result = Eval_Math.Equation(in_equation);
+            User_equation.setText(result);
+        });
         Button one = new Button("1");
         one.setLayoutX(x_pos +10);
         one.setLayoutY(y_pos +100);
@@ -227,8 +237,6 @@ public class Main extends Application{
             if(Minus_consecutive == 1) {
                 User_equation.appendText("-");
                 Plus_consecutive = 0;
-                Div_consecutive = 0;
-                Mult_consecutive = 0;
             }
         });
 
@@ -277,6 +285,7 @@ public class Main extends Application{
             if(L_Consecutive == 1) {
                 User_equation.appendText("(");
                 R_Consecutive = 0;
+                Minus_consecutive = 0;
             }
 
         });
@@ -305,17 +314,7 @@ public class Main extends Application{
         });
         Scene scene = new Scene(root,400,400);
 
-        Button equals = new Button("=");
-        root.getChildren().add(equals);
-        equals.setLayoutX(x_pos +50);
-        equals.setLayoutY(y_pos +125);
-        equals.setOnAction(e->{
 
-           String in_equation = User_equation.getText();
-           System.out.println(in_equation);
-                String result = Eval_Math.Equation(in_equation);
-                User_equation.setText(result);
-        });
 
         stage.setScene(scene);
         stage.show();

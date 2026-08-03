@@ -158,10 +158,39 @@ public class Eval_Math {
                 if(operator_index ==-1){
                     break;
                 }
+                if (operator_index == 0 ||
+                        (!Character.isDigit(p_equation.get(operator_index - 1)) &&
+                                p_equation.get(operator_index - 1) != ')')) {
+                    operator_index++;
+                    continue;
+                }
                 //parser logic
                 int l_index = operator_index-1;
 
-                if (l_index < 0 || l_index >= c_equation.size()) {
+
+                boolean L_Negative_number = false;
+                if (l_index - 1 >= 0 && p_equation.get(l_index - 1) == '-') {
+                    char Before_unary = 0; // zero is required for initialization
+                    if(l_index-2>= 0) { // verifies that theres a character before the unary
+                        Before_unary = p_equation.get(l_index - 2);//one before the operator to check if its unary
+                    }
+                    if(Before_unary== '-' ||
+                            Before_unary == '+' ||
+                            Before_unary == '*' ||
+                            Before_unary == '/' ||
+                            Before_unary == '('
+
+                    ){
+                        System.out.println("negative"); // a marker for the terminal
+                        L_Negative_number = true; //makes it a negative
+                        l_index--; //adds unary
+                        System.out.println("after unary detection" + p_equation.get(l_index));
+                    }
+
+                }
+
+
+                if (l_index < 0 || l_index >= p_equation.size()) {
                     System.out.println("Invalid l_index: " + l_index + " for operator at " + operator_index);
                     break;
                 }
@@ -171,10 +200,10 @@ public class Eval_Math {
                 while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
 
                     if(p_equation.get(l_index+1)== '*'
-                            || c_equation.get(l_index+1)== '/'
-                            ||c_equation.get(l_index+1)== '%'
-                            ||c_equation.get(l_index+1)== '+'
-                            ||c_equation.get(l_index+1)== '-' ){
+                            || p_equation.get(l_index+1)== '/'
+                            ||p_equation.get(l_index+1)== '%'
+                            ||p_equation.get(l_index+1)== '+'
+                            ||p_equation.get(l_index+1)== '-' ){
                         break;
                     }
                     l_index--;
