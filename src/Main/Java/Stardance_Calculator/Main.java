@@ -1,5 +1,8 @@
 package Stardance_Calculator;
 
+import javafx.animation.AnimationTimer;
+import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 
 import javafx.scene.Scene;
@@ -8,6 +11,8 @@ import javafx.scene.control.TextField;
 
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.animation.Animation;
+import javafx.util.Duration;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -18,6 +23,7 @@ import static javafx.scene.paint.Color.BLUE;
 
 
 public class Main extends Application{
+
     // 25 pixel incremental for x direction
 
     int y_pos = 0;
@@ -35,7 +41,22 @@ public class Main extends Application{
         stage.setScene(Calculator_UI(stage));
     }
     public Scene Calculator_UI(Stage stage){
+        ScaleTransition shrink_press = new ScaleTransition(Duration.millis(1000));
+        shrink_press.setToX(0.9);
+        shrink_press.setToY(0.9);
+        shrink_press.setAutoReverse(true);
+        shrink_press.setCycleCount(2);
         Pane root = new Pane();
+        Button one = new Button("1");
+        Button two = new Button("2");
+        Button three = new Button("3");
+        Button four = new Button("4");
+        Button five = new Button("5");
+        Button six = new Button("6");
+        Button seven = new Button("7");
+        Button eight = new Button("8");
+        Button nine = new Button("9");
+        Button zero = new Button("0");
         TextField User_equation= new TextField();
         User_equation.setEditable(false);
        User_equation.setLayoutX(130);
@@ -52,7 +73,7 @@ public class Main extends Application{
             String result = Eval_Math.Equation(in_equation);
             User_equation.setText(result);
         });
-        Button one = new Button("1");
+
         one.setLayoutX(x_pos +10);
         one.setLayoutY(y_pos +100);
         one.setTextFill(BLUE);
@@ -68,7 +89,7 @@ public class Main extends Application{
 
         });
 
-        Button two = new Button("2");
+
         two.setLayoutX(x_pos +30);
         two.setLayoutY(y_pos +100);
         root.getChildren().add(two);
@@ -84,7 +105,7 @@ public class Main extends Application{
         });
 
 
-        Button three = new Button("3");
+
         three.setLayoutX(x_pos +50);
         three.setLayoutY(y_pos +100);
        root.getChildren().add(three);
@@ -99,7 +120,7 @@ public class Main extends Application{
             Plus_consecutive = 0;
         });
 
-        Button four = new Button("4");
+
         four.setLayoutX(x_pos+10);
         four.setLayoutY(y_pos +75);
         root.getChildren().add(four);
@@ -115,7 +136,7 @@ public class Main extends Application{
         });
 
 
-        Button five = new Button("5");
+
         five.setLayoutX(x_pos +30);
         five.setLayoutY(y_pos +75);
         root.getChildren().add(five);
@@ -131,7 +152,7 @@ public class Main extends Application{
         });
 
 
-        Button six = new Button("6");
+
         six.setLayoutX(x_pos +50);
         six.setLayoutY(y_pos +75);
         root.getChildren().add(six);
@@ -146,7 +167,7 @@ public class Main extends Application{
             Plus_consecutive = 0;
         });
 
-        Button seven = new Button("7");
+
         seven.setLayoutX(x_pos +10);
         seven.setLayoutY(y_pos +50);
         root.getChildren().add(seven);
@@ -161,7 +182,7 @@ public class Main extends Application{
             Plus_consecutive = 0;
         });
 
-        Button eight = new Button("8");
+
         eight.setLayoutX(x_pos +30);
         eight.setLayoutY(y_pos +50);
         root.getChildren().add(eight);
@@ -176,7 +197,7 @@ public class Main extends Application{
             Plus_consecutive = 0;
         });
 
-        Button nine = new Button("9");
+
         nine.setLayoutX(x_pos +50);
         nine.setLayoutY(y_pos +50);
         root.getChildren().add(nine);
@@ -191,7 +212,7 @@ public class Main extends Application{
             Plus_consecutive = 0;
         });
 
-        Button zero = new Button("0");
+
         zero.setLayoutX(x_pos +10);
         zero.setLayoutY(y_pos +125);
         root.getChildren().add(zero);
@@ -235,6 +256,7 @@ public class Main extends Application{
             Minus_consecutive++;
 
             if(Minus_consecutive == 1) {
+
                 User_equation.appendText("-");
                 Plus_consecutive = 0;
             }
@@ -311,6 +333,7 @@ public class Main extends Application{
         AC.setLayoutY(y_pos +25);
         AC.setOnAction(e->{
             User_equation.clear();
+            L_Consecutive = 0;
         });
         Scene scene = new Scene(root,400,400);
 

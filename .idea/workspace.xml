@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="adding back changes to get a good revert">
+    <list default="true" id="32c9987b-e108-4afa-a43d-94371075a9bc" name="Changes" comment="this fixes the error of -9.05*-5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Eval_Math.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Java/Stardance_Calculator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Eval_Math.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Stardance_Calculator/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,28 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven.Stardance_Calculator_Project [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
-    "Maven.Stardance_Calculator_Project [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "Maven.finalgameproject [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Stardance_Calculator_Project [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Stardance_Calculator_Project [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.finalgameproject [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project" />
@@ -85,6 +90,17 @@
       <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project\Main\Java" />
       <recent name="C:\Users\mcali\OneDrive\Documents\GitHub\Stardance_Calculator_Project\.idea" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,6 +149,9 @@
       <workItem from="1784418302270" duration="12973000" />
       <workItem from="1785345078004" duration="5447000" />
       <workItem from="1785737924924" duration="2123000" />
+      <workItem from="1785961146408" duration="11436000" />
+      <workItem from="1786419223876" duration="4094000" />
+      <workItem from="1786688720960" duration="4269000" />
     </task>
     <task id="LOCAL-00001" summary="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project">
       <option name="closed" value="true" />
@@ -380,6 +399,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="This commit was all about starting everything up for pom.xml such as grabbing from examples and other assignments in my cisc 190-191 class in order to start up the basics for just being able to code on said project" />
     <MESSAGE value="Commit was for basic javafx setups and for a basic applications for button" />
@@ -403,7 +433,8 @@
     <MESSAGE value="first bound unary fixed" />
     <MESSAGE value="fixed basic user input issues, like ++" />
     <MESSAGE value="adding back changes to get a good revert" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding back changes to get a good revert" />
+    <MESSAGE value="this fixes the error of -9.05*-5" />
+    <option name="LAST_COMMIT_MESSAGE" value="this fixes the error of -9.05*-5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

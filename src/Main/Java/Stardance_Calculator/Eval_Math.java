@@ -14,10 +14,12 @@ public class Eval_Math {
 
         StringBuilder ceq = new StringBuilder( String.valueOf(c_equation));
         //creates the entire equation
+        System.out.println("step one: " +"full equation being incremented");
         for(int e = 0; e < i_equation.length(); e++){
         c_equation.add(e, i_equation.charAt(e));
+        System.out.println(c_equation);
         }
-        //exceptions
+        //exceptions for division by 0
         if(c_equation.contains('/')){
             int o_index;
             for(int g = 0; g<c_equation.size(); g++){
@@ -35,12 +37,12 @@ public class Eval_Math {
         }
         //substring code for the parentheses
         while(c_equation.contains('(')){
-            int begin = c_equation.lastIndexOf('(');
-            int b_after = begin +1;
-            int end;
+            int begin = c_equation.lastIndexOf('('); //looks for the nested parenthese
+            int b_after = begin +1; // the innards of the parenthese
+            int end; //the end of said equation
             //makes the parentheses equation
             ArrayList<Character> p_equation = new ArrayList<>();
-
+            //this is how I append the numbers inside the parentheses
             while(c_equation.get(b_after) != ')') {
                 p_equation.add(c_equation.get(b_after));
                 b_after++;
@@ -66,37 +68,91 @@ public class Eval_Math {
                     }
 
                 }
-
+                if (operator_index == 0 ||
+                        (!Character.isDigit(p_equation.get(operator_index - 1)) &&
+                                p_equation.get(operator_index - 1) != ')')) {
+                    operator_index++;
+                    continue;
+                }
                 //parser logic
                 int l_index = operator_index-1;
                 if (l_index < 0 || l_index >= c_equation.size()) {
 
                     break;
                 }
+                boolean L_Negative_number = false;
                 StringBuilder sl_index = new StringBuilder();
-                sl_index.append(p_equation.get(l_index));
-                while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)))) {
-                    l_index--;
+                if (Character.isDigit(p_equation.get(l_index)) ||
+                        p_equation.get(l_index) == '.') {
                     sl_index.append(p_equation.get(l_index));
+                }
+                System.out.println( "L_index" + l_index);
+                boolean L_oneDot = false;
+
+                while(  l_index -1>=0 && (Character.isDigit(p_equation.get(l_index-1)) || p_equation.get(l_index-1) == '.')) {
+                    if((p_equation.get(l_index-1)== '*'
+                            || p_equation.get(l_index-1)== '/'
+                            ||p_equation.get(l_index-1)== '%'
+                            ||p_equation.get(l_index-1)== '+'
+                            ||p_equation.get(l_index-1)== '-' )){
+                        break;
+                    }
+                    l_index--;
+                    System.out.println("l_index: "+l_index);
+                    sl_index.append(p_equation.get(l_index));
+                    System.out.println("sl_index: "+sl_index);
+                    System.out.println("after incrementation appended" + sl_index);
+                    if((l_index - 1 >= 0&&p_equation.get(l_index-1) == '.' )){
+                        L_oneDot = true;
+                        if(l_index - 1 >= 0 && L_oneDot && Character.isDigit(p_equation.get(l_index-1))){
+                            l_index--;
+                            sl_index.append(p_equation.get(l_index));
+                            continue;
+                        }
+                        while(l_index - 1 >= 0 && Character.isDigit(p_equation.get(l_index-1))) {
+                            l_index--;
+                            sl_index.append(p_equation.get(l_index));
+                            if (l_index - 1 >= 0 && L_oneDot && p_equation.get(l_index - 1) == '.') {
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (l_index - 1 >= 0 && p_equation.get(l_index - 1) == '-') {
+                    L_Negative_number = true;
                 }
                 sl_index.reverse();
                 l_number = Double.parseDouble(String.valueOf(sl_index));
-
+                if(L_Negative_number){
+                    l_number = -l_number;
+                }
+                if (L_Negative_number) {
+                    p_equation.remove(l_index - 1);
+                    operator_index--;
+                    l_index--;
+                }
                 // important note: r_index has to stop at the last number for your logic
                 int r_index = operator_index+1;
                 StringBuilder rl_index = new StringBuilder();
                 rl_index.append(p_equation.get(r_index));
                 boolean oneDot = false;
+
+
+                System.out.println("R_index: "+ r_index);
                 while(  r_index +1 <p_equation.size() && (Character.isDigit(p_equation.get(r_index+1)) || p_equation.get(r_index) == '.')){
+
+
                     if(p_equation.get(r_index+1)== '*'
-                            || c_equation.get(r_index+1)== '/'
-                            ||c_equation.get(r_index+1)== '%'
-                            ||c_equation.get(r_index+1)== '+'
-                            ||c_equation.get(r_index+1)== '-' ){
+                            || p_equation.get(r_index+1)== '/'
+                            ||p_equation.get(r_index+1)== '%'
+                            ||p_equation.get(r_index+1)== '+'
+                            ||p_equation.get(r_index+1)== '-' ){
                         break;
                     }
                     r_index++;
                     rl_index.append(p_equation.get(r_index));
+                    System.out.println("rl_index after incrementation append"+ rl_index);
                     if(p_equation.get(r_index) == '.'){
                         oneDot = true;
                         if(oneDot && Character.isDigit(p_equation.get(r_index+1))){
@@ -296,9 +352,7 @@ public class Eval_Math {
                 break;
             }
             boolean L_Negative_number = false;
-            if (l_index - 1 >= 0 && c_equation.get(l_index - 1) == '-') {
-                L_Negative_number = true;
-            }
+
             StringBuilder sl_index = new StringBuilder();
             if (Character.isDigit(c_equation.get(l_index)) ||
                     c_equation.get(l_index) == '.') {
@@ -338,6 +392,9 @@ public class Eval_Math {
 
                 }
 
+            }
+            if (l_index - 1 >= 0 && c_equation.get(l_index - 1) == '-') {
+                L_Negative_number = true;
             }
             sl_index.reverse();
 
