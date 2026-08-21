@@ -19,6 +19,26 @@ public class Eval_Math {
         c_equation.add(e, i_equation.charAt(e));
         System.out.println(c_equation);
         }
+        if(c_equation.contains('(')){
+                int r_index;
+            for(int i = 0; i< c_equation.size(); i++){
+                char i_ = c_equation.get(i);
+                System.out.println(i_);
+             if(i_=='('){
+                 if(i - 1 >= 0){
+                 System.out.println("parentheses");
+                 r_index = c_equation.get(i-1);
+
+                 System.out.println(r_index);
+                 if(Character.isDigit(r_index)) {
+                     c_equation.add(i, '*');
+                     i++;
+                     System.out.println("this is implicit mult");
+                 }
+                 }
+             }
+            }
+        }
         //exceptions for division by 0
         if(c_equation.contains('/')){
             int o_index;

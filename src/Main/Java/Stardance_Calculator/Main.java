@@ -36,6 +36,8 @@ public class Main extends Application{
     int Mult_consecutive = 0;
     int L_Consecutive = 0;
     int R_Consecutive = 1;
+    int implicit_mult = 0;
+
     @Override
     public void start(Stage stage){
         stage.setScene(Calculator_UI(stage));
@@ -57,11 +59,14 @@ public class Main extends Application{
         Button eight = new Button("8");
         Button nine = new Button("9");
         Button zero = new Button("0");
+
         TextField User_equation= new TextField();
+
         User_equation.setEditable(false);
        User_equation.setLayoutX(130);
        User_equation.setLayoutY(0);
         root.getChildren().add(User_equation);
+
         Button equals = new Button("=");
         root.getChildren().add(equals);
         equals.setLayoutX(x_pos +50);
@@ -86,7 +91,7 @@ public class Main extends Application{
             Minus_consecutive = 0;
             Div_consecutive = 0;
             Mult_consecutive = 0;
-
+            implicit_mult = 1;
         });
 
 
@@ -303,6 +308,8 @@ public class Main extends Application{
         L_Parenthese.setLayoutX(x_pos +10);
         L_Parenthese.setLayoutY(y_pos +25);
         L_Parenthese.setOnAction(e->{
+            System.out.print(User_equation.getText());
+
             L_Consecutive++;
             if(L_Consecutive == 1) {
                 User_equation.appendText("(");
